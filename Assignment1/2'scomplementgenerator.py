@@ -33,6 +33,7 @@ print('Product:', number_prod, ' Hex value:', number_prod_hex)
 
 MemoryAddressOne = 'D1'
 MemoryAddressTwo = 'D2'
+MemoryAddressThree = 'D3'
 
 LoadTwoNumbersIntoMemory = ['21', number_hex, '31', MemoryAddressOne, '21', number_hex1, '31', MemoryAddressTwo]
 LoadTwoNumbersFromMemoryIntoR1andR2 = ['11', MemoryAddressOne, '12', MemoryAddressTwo]
@@ -44,7 +45,7 @@ LoopMath = ['53', '13']
 IncrementR0 = ['50', '05']
 LoopCheck = ['B0', '10']
 
-PrintR3 = ['33', 'FF']
+StoreR3inMemory = ['33', MemoryAddressThree]
 HaltExecution = ['C0', '00']
 
 with open('Machine_In.txt', 'w') as write_obj:
@@ -64,7 +65,7 @@ with open('Machine_In.txt', 'w') as write_obj:
         write_obj.write(str(i) + '\n')
     for i in LoopCheck:
         write_obj.write(str(i) + '\n')
-    for i in PrintR3:
+    for i in StoreR3inMemory:
         write_obj.write(str(i) + '\n')
     for i in HaltExecution:
         write_obj.write(str(i) + '\n')
